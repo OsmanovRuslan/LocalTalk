@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>LocalTalk</title>
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Comfortaa&display=swap" rel="stylesheet">
+
+        {% load static %}
+
+        <link rel="stylesheet" href="{% static 'chat/css/index.css' %}">
+
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    </head>
+    <body>
+        <div class="header d-flex justify-content-between align-items-start">
+            <div class="logo py-2 px-3">
+            <h1 class="m-0 text-light">LocalTalk</h1>
+            </div>
+            
+            {% if username %}
+            <div class="d-flex align-items-center p-2">
+                <a href="{% url 'chat' %}" class="btn p-2">Главная</a>
+            </div>
+            {% else %}
+            <div class="d-flex align-items-center p-2">
+                <a href="{% url 'home' %}" class="btn p-2">Выход</a>
+            </div>
+            {% endif %}
+        </div>
+
+        <div class="card_index w-50 my-4 mx-auto">
+            <h2 class="py-2 px-3 d-block">Профиль</h2>
+            <div class="py-2 px-2">
+                <div class="p-2">Ваш логин: {{ username }}</div>
+                <form method="post" class="d-flex">
+                    {%csrf_token%}
+                    <input class="form-control m-2 w-50" type="text" name="new_login" placeholder="Введите новый логин...">
+                    <input class="btn blue-custom-button m-2" type="submit" value="Сменить логин" name="change_login">
+                </form> 
+                <div class="p-2">Ваша почта: {{ email }}</div>
+                <form method="post" class="d-flex">
+                    {%csrf_token%}
+                    <input class="form-control m-2 w-50" type="text" name="new_email" placeholder="Введите новую почту...">
+                    <input class="btn blue-custom-button m-2" type="submit" value="Сменить почту" name="change_email">
+                </form>
+                <form method="post" class="d-flex">
+                    {%csrf_token%}
+                    <input class="form-control m-2 w-50" type="text" name="new_password" placeholder="Введите новый пароль...">
+                    <input class="btn blue-custom-button m-2" type="submit" value="Сменить пароль" name="change_password">
+                </form>
+            </div>
+
+            <form class="d-flex flex-row justify-content-end" method="post">
+                {%csrf_token%}
+                <input class="btn m-2 px-3 py-2 blue-custom-button" type="submit" name="exit" value="Выйти">
+            </form>
+        </div>
+
+       
+
+    </body>
+</html>

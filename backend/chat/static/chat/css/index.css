@@ -1,0 +1,104 @@
+body {
+    font-family: 'Comfortaa', cursive !important;
+
+    margin: 0;
+    background: url("left.svg") repeat-y, url("right.svg") repeat-y;
+    background-position: -175px 150px, 120% 150px;
+}
+
+.header 
+{
+    margin: 0;
+    background-color: white;
+    border-bottom: 2px solid #B0B0B0;
+    box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.25);
+}
+
+.header .logo 
+{
+    background-color: #5280E2;
+    border-radius: 0 0 30px 0;
+    
+}
+
+.header a 
+{
+    border: 2px solid #B0B0B0;
+    border-radius: 15px;
+    box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.25);
+}
+
+.header a:hover
+{
+    background-color: #B0B0B0;
+    color: white;
+}
+
+
+.header a:active 
+{
+    background-color: #686868 !important;
+    border-color: #686868 !important;
+    color: white !important;
+    box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.75);
+}
+
+.content 
+{
+    width: 80%;
+    margin: 80px auto;
+}
+
+.card_index
+{
+    border: 2px solid #B0B0B0 !important;
+    border-radius: 25px !important;
+    overflow: hidden;
+    box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.25);
+}
+
+input[type='password'],
+input[type='text'],
+input[type='email'],
+textarea
+{
+    border: 1px solid #B0B0B0 !important;
+    border-radius: 30px !important;
+}
+
+.blue-custom-button
+{
+    color: white !important;
+    background-color: #5280E2 !important;
+    border-radius: 25px !important;
+    border: 2px solid #5280E2 !important;
+}
+
+.blue-custom-button:hover 
+{
+    background-color: white !important;
+    border: 2px solid #5280E2 !important;
+    color: black !important;
+}
+
+.blue-custom-button:active 
+{
+    color: white !important;
+    background-color: #1c408f !important;
+    border: 2px solid #1c408f !important;
+}
+
+.authentication-window 
+{
+    background-color: white;
+    border: 2px solid #5280E2;
+    border-radius: 25px;
+}
+
+.vertical-rule 
+{
+    width: 0px;
+    margin: 20px 5px;
+    border: 2px solid #B0B0B0;
+    border-radius: 10px;
+}

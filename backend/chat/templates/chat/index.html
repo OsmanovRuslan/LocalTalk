@@ -1,0 +1,34 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>LocalTalk</title>
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Comfortaa&display=swap" rel="stylesheet">
+
+        
+
+        <link rel="stylesheet" href="{% static 'chat/css/index.css' %}">
+
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    </head>
+    <body>
+        <div class="header d-flex justify-content-between align-items-start">
+            <div class="logo py-2 px-3">
+            <h1 class="m-0 text-light">LocalTalk</h1>
+            </div>
+            {% if username %}
+            <div class="d-flex align-items-center p-2">
+                <h4 class="my-auto me-2 p-2">Добро пожаловать, {{ username }}</h4>
+                <a href="{% url 'profile' %}" class="btn p-2">Профиль</a>
+            </div>
+            {% else %}
+            <div class="d-flex align-items-center p-2">
+            <a href="{% url 'auth' %}" class="btn p-2">Авторизация</a>
+            </div>
+            {% endif %}
+        </div> 
+    </body>
+</html>
